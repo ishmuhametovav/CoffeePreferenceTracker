@@ -6,14 +6,15 @@
     </head>
     <body>
         <h2>Welcome to CoffeePreferenceTracker</h2>
-        <form method="GET" action="auth">
+        <form method="POST" action="auth">
             E-mail: <input type="text" name="email"/>
             <br></br>
             Password: <input type="password" name="password"/>
             <br></br>
             <input type="submit" value="Sign Up!"/>
-            <br></br>
         </form>
+
+        <p><span style="color:red">${error}</span></p>
         Didn't Sign In? You can do it<a href="reg"> here!</a>
     </body>
 </html>

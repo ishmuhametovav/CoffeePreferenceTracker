@@ -2,18 +2,29 @@ package repository;
 
 import model.User;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
 public class InMemoryUserDAO
 {
+    private AtomicInteger genId = new AtomicInteger(0);
     private List<User> users = new ArrayList<>();
 
     public User createUser(String firstName, String lastName, int age, String email, String hashPassword)
     {
-        User user = new User(firstName, lastName, age, email, hashPassword);
+        User user = new User(firstName, lastName, age, email, hashPassword, genId.incrementAndGet());
         users.add(user);
+        return user;
+    }
+
+    public User findUserById(int id)
+    {
+        User user = users.stream().filter(element -> element.getId() == id)
+                .findFirst().orElse(null);
+
         return user;
     }
 

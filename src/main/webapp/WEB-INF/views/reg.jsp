@@ -19,5 +19,6 @@
         <br></br>
         <input type="submit" value="Sign In!"/>
     </form>
+    <p><span style="color:red">${error}</span></p>
 </body>
 </html>

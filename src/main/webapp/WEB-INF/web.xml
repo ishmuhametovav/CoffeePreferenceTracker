@@ -5,6 +5,11 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>filter.AuthFilter</filter-class>
+    </filter>
+
     <listener>
         <listener-class>listener.AppContextListener</listener-class>
     </listener>
@@ -19,6 +24,27 @@
         <servlet-class>controller.AuthController</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>ProfileController</servlet-name>
+        <servlet-class>controller.ProfileController</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>CoffeeController</servlet-name>
+        <servlet-class>controller.CoffeeController</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>NewTastingController</servlet-name>
+        <servlet-class>controller.NewTastingController</servlet-class>
+    </servlet>
+
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+
     <servlet-mapping>
         <servlet-name>RegistrationController</servlet-name>
         <url-pattern>/reg</url-pattern>
@@ -27,6 +53,21 @@
     <servlet-mapping>
         <servlet-name>AuthController</servlet-name>
         <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ProfileController</servlet-name>
+        <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CoffeeController</servlet-name>
+        <url-pattern>/coffees</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>NewTastingController</servlet-name>
+        <url-pattern>/tasting/new</url-pattern>
     </servlet-mapping>
 
 </web-app>
