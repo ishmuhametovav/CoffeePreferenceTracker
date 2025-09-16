@@ -8,8 +8,8 @@
     </head>
     <body>
         <form action="new" method="POST">
-            <label for="coffee">Choose coffee you have tasted</label>
-            <select id="coffee" name="coffee">
+            <label for="coffeeid">Choose coffee you have tasted</label>
+            <select id="coffeeid" name="coffeeid">
                 <%
                 List<Coffee> coffeeList = (List<Coffee>) request.getAttribute("coffees");
 
@@ -18,7 +18,7 @@
                     for (Coffee coffee : coffeeList)
                     {
                 %>
-                        <option value=<%= coffee.getName() %>>
+                        <option value=<%= coffee.getId() %>>
                         <%= coffee.getName() %>
                         </option>
                 <%
