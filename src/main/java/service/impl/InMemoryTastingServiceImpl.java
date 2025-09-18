@@ -8,7 +8,7 @@ import java.util.List;
 
 public class InMemoryTastingServiceImpl implements TastingService
 {
-    private InMemoryTastingDAO tastingDAO;
+    private InMemoryTastingDAO tastingDAO =  new InMemoryTastingDAO();
 
     @Override
     public Tasting createTasting(int userId, int coffeeId, Tasting.GRADE grade, String review)

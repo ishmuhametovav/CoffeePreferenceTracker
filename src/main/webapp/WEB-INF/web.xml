@@ -39,6 +39,16 @@
         <servlet-class>controller.NewTastingController</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>ShowTastingController</servlet-name>
+        <servlet-class>controller.ShowTastingController</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DeleteTastingController</servlet-name>
+        <servlet-class>controller.DeleteTastingController</servlet-class>
+    </servlet>
+
     <filter-mapping>
         <filter-name>AuthFilter</filter-name>
         <url-pattern>/*</url-pattern>
@@ -68,6 +78,16 @@
     <servlet-mapping>
         <servlet-name>NewTastingController</servlet-name>
         <url-pattern>/tasting/new</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ShowTastingController</servlet-name>
+        <url-pattern>/tasting/show</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DeleteTastingController</servlet-name>
+        <url-pattern>/tasting/del</url-pattern>
     </servlet-mapping>
 
 </web-app>
